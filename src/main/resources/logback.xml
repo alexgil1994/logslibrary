@@ -1,16 +1,25 @@
-<!-- Mallon tropos me DBAppender pou den tha xreiastw -->
+<!-- Custom Appender configuration -->
 <configuration>
 
     <appender name="postLogs" class="com.amarkovits.logslibrary.PostLog">
-        <baseurl>http://localhost:8080/v1/event/addMessage</baseurl>
+        <baseurl>http://localhost:8080/v1/event/addMessage/</baseurl>
         <applicationname>logfilesapplicationname</applicationname>
     </appender>
 
-    <!--<appender name="post" class="com.amarkovits.logslibrary.LogsLibrary"/>-->
-    <!--<param name="URL" value="http://localhost:8080/v1/event/addMessage"/>-->
-    <!--<param name="Driver" value="com.mysql.jdbc.Driver"/>-->
-    <!--<param name="User" value="devuser"/>-->
-    <!--<param name="Password" value="otsdb"/>-->
+    <Root level="error">
+        <appender-ref ref="postLogs"/>
+    </Root>
+    <Root level="warn">
+        <appender-ref ref="postLogs"/>
+    </Root>
+    <Root level="info">
+        <appender-ref ref="postLogs"/>
+    </Root>
+    <Root level="trace">
+        <appender-ref ref="postLogs"/>
+    </Root>
+    <Root level="debug">
+        <appender-ref ref="postLogs"/>
+    </Root>
 
-    <!--<appender-ref ref="post"/>-->
 </configuration>

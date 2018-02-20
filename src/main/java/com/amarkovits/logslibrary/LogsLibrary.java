@@ -12,13 +12,13 @@ public class LogsLibrary {
         logger.debug("hello.");
 
         logger.error("its an error");
-        logger.warn("warning ....");
-        logger.info("fesfesff info");
-        logger.trace("trace this log");
+        logger.warn("warning..");
+        logger.info("info info");
+        logger.trace("trace");
+        logger.debug("debug here");
+
 
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         StatusPrinter.print(loggerContext);
-
-        PostLog postLog = new PostLog();
     }
 }
