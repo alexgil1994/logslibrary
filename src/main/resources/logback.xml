@@ -3,7 +3,7 @@
 
     <appender name="postLogs" class="com.amarkovits.logslibrary.PostLog">
         <baseurl>http://localhost:8080/v1/event/addMessage/</baseurl>
-        <applicationname>logfilesapplicationname</applicationname>
+        <applicationname>Logging testing library</applicationname>
     </appender>
 
     <Root level="error">

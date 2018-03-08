@@ -8,15 +8,14 @@ import org.slf4j.LoggerFactory;
 public class LogsLibrary {
 
     public static void main(String[] args) {
-        Logger logger = LoggerFactory.getLogger("logFiles");
-        logger.debug("hello.");
+        Logger logger = LoggerFactory.getLogger(LoggerFactory.class);
 
-        logger.error("its an error");
-        logger.warn("warning..");
+        // Testing logging
+//        logger.error("its an error");
+//        logger.warn("warning..");
         logger.info("info info");
-        logger.trace("trace");
-        logger.debug("debug here");
-
+//        logger.trace("trace");
+//        logger.debug("debug here");
 
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
         StatusPrinter.print(loggerContext);
