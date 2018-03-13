@@ -1,7 +1,5 @@
 package com.amarkovits.logslibrary.Model;
 
-import ch.qos.logback.classic.Level;
-
 public class Event {
 
     private String message;

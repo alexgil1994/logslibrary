@@ -6,20 +6,25 @@
         <applicationname>Logging testing library</applicationname>
     </appender>
 
-    <Root level="error">
+    <Root>
+        <level value="ALL" />
         <appender-ref ref="postLogs"/>
     </Root>
-    <Root level="warn">
-        <appender-ref ref="postLogs"/>
-    </Root>
-    <Root level="info">
-        <appender-ref ref="postLogs"/>
-    </Root>
-    <Root level="trace">
-        <appender-ref ref="postLogs"/>
-    </Root>
-    <Root level="debug">
-        <appender-ref ref="postLogs"/>
-    </Root>
+
+    <!--<Root level="error">-->
+        <!--<appender-ref ref="postLogs"/>-->
+    <!--</Root>-->
+    <!--<Root level="warn">-->
+        <!--<appender-ref ref="postLogs"/>-->
+    <!--</Root>-->
+    <!--<Root level="info">-->
+        <!--<appender-ref ref="postLogs"/>-->
+    <!--</Root>-->
+    <!--<Root level="trace">-->
+        <!--<appender-ref ref="postLogs"/>-->
+    <!--</Root>-->
+    <!--<Root level="debug">-->
+        <!--<appender-ref ref="postLogs"/>-->
+    <!--</Root>-->
 
 </configuration>

@@ -11,9 +11,10 @@ public class LogsLibrary {
         Logger logger = LoggerFactory.getLogger(LoggerFactory.class);
 
         // Testing logging
+
+        logger.info("info info");
 //        logger.error("its an error");
 //        logger.warn("warning..");
-        logger.info("info info");
 //        logger.trace("trace");
 //        logger.debug("debug here");
 
