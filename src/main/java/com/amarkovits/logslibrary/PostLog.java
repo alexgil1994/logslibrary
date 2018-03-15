@@ -56,7 +56,7 @@ public class PostLog extends AppenderBase<ILoggingEvent> implements Callback<Eve
             InetAddress host = InetAddress.getLocalHost();
             event.setHostname(String.valueOf(host));
         } catch (UnknownHostException e) {
-            logger.error("Getting the host's name");
+            logger.error("An error occurred when trying to get the host's name", e);
             e.printStackTrace();
         }
 
@@ -65,16 +65,10 @@ public class PostLog extends AppenderBase<ILoggingEvent> implements Callback<Eve
             InetAddress ip = InetAddress.getLocalHost();
             event.setIp(ip.getHostAddress());
         } catch (UnknownHostException e) {
-            logger.error("Getting the host's ip");
+            logger.error("An error occurred when trying to get the host's ip", e);
             e.printStackTrace();
         }
         event.setCargo("Not specified");
-
-
-//        iLoggingEvent.getCallerData();
-//        iLoggingEvent.getLoggerName();
-//        iLoggingEvent.getMDCPropertyMap();
-//        iLoggingEvent.getThreadName();
 
         // Making an okHttpClient
         OkHttpClient.Builder okhttpClientBuilder = new OkHttpClient.Builder();
@@ -98,25 +92,22 @@ public class PostLog extends AppenderBase<ILoggingEvent> implements Callback<Eve
             obj.put("level", event.getLevel());
             obj.put("ip", event.getIp());
             obj.put("cargo", event.getCargo());
+            logger.debug("Json Object was created with the desired informations and is ready to be posted");
 
             Call<Event> call = postService.sendingLog(obj);
             call.enqueue(this);
-            logger.info("Success posting a log");
+            logger.debug("Log was successfully posted to the db.");
         }catch (Exception e){
-            logger.error("When creating the JsonObject and sending the Post Request");
+            logger.warn("When creating the JsonObject and sending the Post Request", e);
             e.printStackTrace();
         }
     }
 
     public void onResponse(Call<Event> call, retrofit2.Response<Event> response) {
 //        TODO : LOG SUCCESSFUL ?
-//        Logger logger = LoggerFactory.getLogger(PostLog.class);
-//        logger.info("Responded successfully to the Post request (logging)");
     }
 
     public void onFailure(Call<Event> call, Throwable throwable) {
 //        TODO : LOG FAILED ?
-//        Logger logger = LoggerFactory.getLogger(PostLog.class);
-//        logger.error("Post request logging failed");
     }
 }
