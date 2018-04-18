@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>logslibrary</name>
-    <description>Project for the creation of a custom appender for logback ( meant to send the logs in a central database ) with logback and retrofit.</description>
+    <description>Project for the creation of a custom appender for logging ( meant to send the logs in a central database ) with logback and retrofit.</description>
 
     <dependencies>
         <dependency>
